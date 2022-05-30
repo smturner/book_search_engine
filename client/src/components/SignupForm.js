@@ -31,11 +31,13 @@ const SignupForm = () => {
     }
 
     try {
-      const {data} = await addUser({variable: {...userFormData}});
+      const {data} = await addUser({variables: {...userFormData}});
 
       Auth.login(data.addUser.token);
     }catch (e) {
       console.error(e);
+      setShowAlert(true)
+
     }
 
     //   if (!response.ok) {
@@ -50,11 +52,11 @@ const SignupForm = () => {
     //   setShowAlert(true);
     // }
 
-    // setUserFormData({
-    //   username: '',
-    //   email: '',
-    //   password: '',
-    // });
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
   };
 
   return (
