@@ -20,7 +20,41 @@ const resolvers = {
             return { token, user };
         },
         login: async (parent, { email, password }) => {
-            
+            const user = await User.findOne({ email });
+
+            if (!user) {
+                throw new AuthenticationError('No user with this email found!');
+            }
+
+            const correctPw = await user.isCorrectPassword(password);
+
+            if (!correctPw) {
+                throw new AuthenticationError('Incorrect password!');
+            }
+            const token = signToken(user);
+            return { token, user };
+        },
+
+        saveBook: async (parent, { userId, bookId }, context) => {
+            if (context.user) {
+                return User.findOneAndUpdate(
+                    { _id: user._id },
+                    { $addToSet: { savedBooks: bookId } },
+                    { new: true, runValidators: true }
+                )
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        
+        removeBook: async (parent, { bookId }, context) => {
+            if (context.user) {
+                return User.findOneAndUpdate(
+                    { _id: user._id },
+                    { $pull: { savedBooks: bookId } },
+                    { new: true }
+                );
+            }
+            throw new AuthenticationError('You need to be logged in!')
         }
     }
 
