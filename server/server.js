@@ -5,7 +5,7 @@ const { typeDefs, resolvers } = require('./schemas');
 const path = require('path');
 const db = require('./config/connection');
 //can get rid of routes eventually
-const routes = require('./routes');
+// const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 //get rid of eventually
-app.use(routes);
+// app.use(routes);
 
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
