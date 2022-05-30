@@ -157,9 +157,9 @@ You'll need to create the following front-end files:
 
 * `mutations.js`:
 
-	* `LOGIN_USER` will execute the `loginUser` mutation set up using Apollo Server.
+	<!-- * `LOGIN_USER` will execute the `loginUser` mutation set up using Apollo Server.
 
-	* `ADD_USER` will execute the `addUser` mutation.
+	* `ADD_USER` will execute the `addUser` mutation. -->
 
 	* `SAVE_BOOK` will execute the `saveBook` mutation.
 
