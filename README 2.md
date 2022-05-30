@@ -155,7 +155,7 @@ You'll need to create the following front-end files:
 
 <!-- * `queries.js`: This will hold the query `GET_ME`, which will execute the `me` query set up using Apollo Server. -->
 
-* `mutations.js`:
+<!-- * `mutations.js`:
 
 	* `LOGIN_USER` will execute the `loginUser` mutation set up using Apollo Server.
 
@@ -163,11 +163,11 @@ You'll need to create the following front-end files:
 
 	* `SAVE_BOOK` will execute the `saveBook` mutation.
 
-	* `REMOVE_BOOK` will execute the `removeBook` mutation.
+	* `REMOVE_BOOK` will execute the `removeBook` mutation. -->
 
 Additionally, you’ll need to complete the following tasks in each of these front-end files:
 
-* `App.js`: Create an Apollo Provider to make every request work with the Apollo Server.
+<!-- * `App.js`: Create an Apollo Provider to make every request work with the Apollo Server. -->
 	
 * `SearchBooks.js`:
 
@@ -184,8 +184,8 @@ Additionally, you’ll need to complete the following tasks in each of these fro
 	* Use the `useMutation()` Hook to execute the `REMOVE_BOOK` mutation in the `handleDeleteBook()` function instead of the `deleteBook()` function that's imported from `API` file. (Make sure you keep the `removeBookId()` function in place!)
 
 * `SignupForm.js`: Replace the `addUser()` functionality imported from the `API` file with the `ADD_USER` mutation functionality.
-
-* `LoginForm.js`: Replace the `loginUser()` functionality imported from the `API` file with the `LOGIN_USER` mutation functionality.
+<!-- 
+* `LoginForm.js`: Replace the `loginUser()` functionality imported from the `API` file with the `LOGIN_USER` mutation functionality. -->
 
 
 ## Grading Requirements
