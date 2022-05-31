@@ -8,7 +8,7 @@ import Auth from '../utils/auth';
 import { removeBookId, saveBookIds } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  const {userDataLength, data} = useQuery(GET_ME);
+  const {loading, data} = useQuery(GET_ME);
 
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
   const userData = data?.me || [];
@@ -37,7 +37,7 @@ const SavedBooks = () => {
   };
 
   // if data isn't here yet, say so
-  if (!userDataLength) {
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
   // const savedBookIds = userData.savedBooks.map((book) => book.bookId);
