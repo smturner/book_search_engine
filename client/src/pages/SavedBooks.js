@@ -11,8 +11,8 @@ const SavedBooks = () => {
   const {loading, data} = useQuery(GET_ME);
 
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
-  const userData = data?.me || [];
-  
+  const userData = data?.me || {};
+  console.log(userData)
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
@@ -47,7 +47,7 @@ const SavedBooks = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Viewing saved books!</h1>
+          <h1>Viewing {userData.username} saved books!</h1>
         </Container>
       </Jumbotron>
       <Container>
