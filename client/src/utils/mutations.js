@@ -24,24 +24,24 @@ mutation login ($email: String!, $password: String!) {
   }
   `
 export const SAVE_BOOK = gql`
-mutation saveBook($bookData: BookInput) {
-    saveBook(bookData: $bookData) {
-      _id
-      username
-      email
-      savedBooks {
-        bookId
-        authors
-        desccription
-        title
-        image
-        link
-      }
+mutation saveBook($input: BookInput) {
+  saveBook(input: $input) {
+    username
+    _id
+    bookCount
+    savedBooks {
+      bookId
+      authors
+      desccription
+      title
+      image
+      link
     }
-  }`
+  }
+}`
 
   export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: ID!) {
+  mutation removeBook($bookId: String) {
     removeBook(bookId: $bookId) {
       _id
       username
