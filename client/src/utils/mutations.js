@@ -32,7 +32,7 @@ mutation saveBook($input: BookInput) {
     savedBooks {
       bookId
       authors
-      desccription
+      description
       title
       image
       link
@@ -49,7 +49,7 @@ mutation saveBook($input: BookInput) {
       savedBooks {
         bookId
         authors
-        desccription
+        description
         title
         image
         link
